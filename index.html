@@ -3,31 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Business Mock Websites</title>
+    <title>Local Business Mock Sites</title>
     <meta
       name="description"
-      content="Mock website portfolio for local businesses. Built to help owners visualize a modern, conversion-focused web presence."
+      content="A local-business mock site index for live demo links."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="frame">
-      <p class="kicker">Website Demo Studio</p>
-      <h1>Mock websites for local businesses.</h1>
-      <p class="lead">
-        This repo is set up for quickly building and publishing custom mock websites to
-        GitHub Pages.
-      </p>
-      <div class="actions">
-        <a href="GITHUB_SETUP.md" class="btn primary">GitHub Setup Guide</a>
-        <a href="README.md" class="btn secondary">Project Workflow</a>
-      </div>
+    <main class="hub">
+      <header>
+        <p class="eyebrow">San Francisco Local Business Mocks</p>
+        <h1>Website Demo Index</h1>
+        <p>
+          Use this page as the front door for all live mock sites.
+        </p>
+      </header>
+
+      <section aria-labelledby="active-sites">
+        <h2 id="active-sites">Active Demo Sites</h2>
+        <ul class="site-list">
+          <li>
+            <a href="sites/parkside-farmers-market/index.html">Parkside Farmers Market</a>
+            <span>555 Taraval St, San Francisco, CA 94116</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="setup">
+        <h2 id="setup">Project Docs</h2>
+        <ul class="doc-list">
+          <li><a href="GITHUB_SETUP.md">GitHub setup instructions</a></li>
+          <li><a href="README.md">Workflow notes</a></li>
+        </ul>
+      </section>
     </main>
   </body>
 </html>

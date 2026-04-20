@@ -1,9 +1,9 @@
 :root {
-  --bg: #fbf8f3;
-  --paper: #ffffff;
-  --ink: #1f1f1f;
-  --accent: #0b6e4f;
-  --accent-dark: #07533c;
+  --bg: #f7f2e7;
+  --paper: #fffdf8;
+  --ink: #1f1b16;
+  --line: #d8cfbf;
+  --accent: #2f6a47;
 }
 
 * {
@@ -12,69 +12,63 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 15% 20%, #f4dac8 0, transparent 32%),
-    radial-gradient(circle at 80% 15%, #d8efe6 0, transparent 28%),
-    var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font-family: "Manrope", "Avenir Next", sans-serif;
-  padding: 1.25rem;
+  padding: 1.2rem;
 }
 
-.frame {
-  width: min(740px, 100%);
+.hub {
+  width: min(840px, 100%);
+  margin: 0 auto;
   background: var(--paper);
-  border: 1px solid #e7dfd3;
-  border-radius: 20px;
-  padding: clamp(1.4rem, 4vw, 2.4rem);
-  box-shadow: 0 18px 42px rgba(31, 31, 31, 0.12);
+  border: 1px solid var(--line);
+  padding: clamp(1.2rem, 4vw, 2.2rem);
 }
 
-.kicker {
-  margin: 0 0 0.8rem;
-  font-size: 0.8rem;
-  font-weight: 800;
+.eyebrow {
+  margin: 0;
+  font-size: 0.77rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-dark);
+  color: #575248;
 }
 
 h1 {
+  margin: 0.55rem 0 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 1.8rem 0 0.6rem;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.15rem;
+}
+
+ul {
   margin: 0;
-  font-family: "Sora", "Manrope", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  line-height: 1.12;
+  padding-left: 1.1rem;
 }
 
-.lead {
-  max-width: 58ch;
-  margin: 0.95rem 0 0;
+.site-list li,
+.doc-list li {
+  margin: 0.45rem 0;
 }
 
-.actions {
-  margin-top: 1.4rem;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+.site-list span {
+  display: block;
+  color: #5f5b52;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
 }
 
-.btn {
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 12px;
-  padding: 0.68rem 1rem;
+a {
+  color: var(--accent);
 }
 
-.btn.primary {
-  color: #fff;
-  background: var(--accent);
-}
-
-.btn.secondary {
-  color: var(--ink);
-  background: #f5f2eb;
-  border: 1px solid #ded5c8;
+a:hover {
+  text-decoration-thickness: 2px;
 }
