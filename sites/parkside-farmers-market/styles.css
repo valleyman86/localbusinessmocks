@@ -1,9 +1,11 @@
 :root {
-  --paper: #f8f1e3;
-  --ink: #2a221b;
-  --line: #cfbea4;
-  --olive: #4d6035;
-  --rust: #9a4f2e;
+  --paper: #f3f7ee;
+  --ink: #1c261c;
+  --line: #b9c9af;
+  --olive: #2f5d35;
+  --leaf: #487c42;
+  --cream: #f8f7ef;
+  --rust: #8a4a2b;
 }
 
 * {
@@ -14,7 +16,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(to bottom, rgba(130, 109, 80, 0.08), transparent 80px),
+    linear-gradient(to bottom, rgba(61, 108, 70, 0.18), rgba(61, 108, 70, 0.05) 130px, transparent 220px),
     var(--paper);
   font-family: "Manrope", "Avenir Next", sans-serif;
   line-height: 1.55;
@@ -27,8 +29,8 @@ body {
 }
 
 .masthead {
-  border-top: 4px double var(--line);
-  border-bottom: 4px double var(--line);
+  border-top: 5px solid var(--olive);
+  border-bottom: 5px solid var(--olive);
   padding: 1.2rem 0 1rem;
 }
 
@@ -38,7 +40,7 @@ body {
   letter-spacing: 0.08em;
   font-weight: 700;
   font-size: 0.76rem;
-  color: #5f5243;
+  color: #3f563f;
 }
 
 h1,
@@ -68,10 +70,10 @@ h1 {
 
 .hero img {
   width: 100%;
-  max-height: 430px;
+  max-height: 440px;
   object-fit: cover;
   display: block;
-  border: 1px solid var(--line);
+  border: 2px solid var(--olive);
 }
 
 .split {
@@ -92,13 +94,34 @@ h2 {
 
 .split aside {
   border: 1px solid var(--line);
-  background: #fcf7ed;
+  background: var(--cream);
   padding: 0.85rem 0.95rem;
 }
 
 .split ul {
   margin: 0;
   padding-left: 1.1rem;
+}
+
+.storefront {
+  margin-top: 1.3rem;
+}
+
+.storefront-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.65rem;
+}
+
+.storefront-grid figure {
+  margin: 0;
+}
+
+.storefront-grid img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 .photo-band {
@@ -126,7 +149,7 @@ h2 {
 }
 
 a {
-  color: var(--olive);
+  color: var(--leaf);
 }
 
 a:hover {
@@ -148,6 +171,15 @@ footer {
 
   .photo-band {
     grid-template-columns: 1fr;
+  }
+
+  .storefront-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .storefront-grid img {
+    height: auto;
+    max-height: 320px;
   }
 
   .photo-band img {
