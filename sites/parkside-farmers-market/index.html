@@ -11,22 +11,80 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Botanical SVG background pattern -->
+    <svg class="bg-pattern" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="produce" x="0" y="0" width="180" height="200" patternUnits="userSpaceOnUse">
+          <!-- Leaf cluster top-left -->
+          <g opacity="0.07" fill="#2d6a3f">
+            <ellipse cx="28" cy="30" rx="12" ry="6" transform="rotate(-35 28 30)"/>
+            <ellipse cx="22" cy="22" rx="10" ry="5" transform="rotate(-60 22 22)"/>
+            <line x1="30" y1="36" x2="22" y2="18" stroke="#2d6a3f" stroke-width="1.2" opacity="0.5"/>
+          </g>
+          <!-- Tomato mid-right -->
+          <g opacity="0.055" transform="translate(130,55)">
+            <circle cx="0" cy="0" r="11" fill="#b5453a"/>
+            <path d="M-3,-11 Q0,-16 3,-11" fill="#3d7a4a" stroke="none"/>
+          </g>
+          <!-- Carrot bottom-left -->
+          <g opacity="0.06" transform="translate(55,150) rotate(15)">
+            <path d="M0,0 L-4,22 L4,22 Z" fill="#c4793a"/>
+            <path d="M-2,-2 Q-8,-10 -3,-6 M2,-2 Q8,-10 3,-6" stroke="#3d7a4a" stroke-width="1.2" fill="none"/>
+          </g>
+          <!-- Radish mid -->
+          <g opacity="0.05" transform="translate(95,110)">
+            <ellipse cx="0" cy="4" rx="7" ry="9" fill="#c45567"/>
+            <line x1="0" y1="-5" x2="-2" y2="-14" stroke="#3d7a4a" stroke-width="1.2"/>
+            <ellipse cx="-4" cy="-15" rx="5" ry="3" fill="#3d7a4a" transform="rotate(-20 -4 -15)"/>
+          </g>
+          <!-- Lemon top-right -->
+          <g opacity="0.05" transform="translate(155,170)">
+            <ellipse cx="0" cy="0" rx="9" ry="7" fill="#d4b745" transform="rotate(20)"/>
+          </g>
+          <!-- Small leaf scatter -->
+          <ellipse cx="70" cy="75" rx="8" ry="4" fill="#2d6a3f" opacity="0.05" transform="rotate(40 70 75)"/>
+          <ellipse cx="150" cy="18" rx="6" ry="3" fill="#2d6a3f" opacity="0.04" transform="rotate(-25 150 18)"/>
+          <!-- Tiny dot accents like seeds -->
+          <circle cx="110" cy="170" r="2" fill="#2d6a3f" opacity="0.04"/>
+          <circle cx="35" cy="100" r="1.5" fill="#c4793a" opacity="0.04"/>
+          <circle cx="170" cy="95" r="2" fill="#2d6a3f" opacity="0.035"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#produce)" />
+    </svg>
+
     <div class="page">
+      <!-- Top ribbon -->
+      <div class="ribbon" aria-hidden="true">
+        <span>Fresh</span>
+        <span>Local</span>
+        <span>Community</span>
+        <span>Since the Sunset</span>
+      </div>
+
       <header class="masthead">
-        <p class="kicker">Neighborhood Grocery Profile</p>
-        <h1>Parkside Farmers Market</h1>
-        <p class="subtitle">555 Taraval St, San Francisco, CA 94116</p>
-        <p class="meta-line">
+        <div class="masthead-badge">
+          <svg viewBox="0 0 80 80" aria-hidden="true" class="leaf-icon">
+            <path d="M40 70 C20 50 5 30 15 15 C25 5 40 8 40 8 C40 8 55 5 65 15 C75 30 60 50 40 70Z" fill="var(--green-mid)" opacity="0.25"/>
+            <path d="M40 68 C40 68 40 25 40 12" stroke="var(--green-deep)" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path d="M40 45 C32 38 25 35 20 30" stroke="var(--green-deep)" stroke-width="1" fill="none" opacity="0.2"/>
+            <path d="M40 35 C48 28 55 26 58 22" stroke="var(--green-deep)" stroke-width="1" fill="none" opacity="0.2"/>
+          </svg>
+        </div>
+        <p class="kicker">Neighborhood Grocery</p>
+        <h1>Parkside<br/>Farmers Market</h1>
+        <p class="subtitle">555 Taraval St, San Francisco</p>
+        <div class="meta-pills">
           <span>Sunset District</span>
           <span>(415) 681-5563</span>
           <span>Produce + Middle Eastern Staples</span>
-        </p>
+        </div>
       </header>
 
       <section class="quick-info" aria-labelledby="hours-contact">
@@ -45,87 +103,114 @@
       </section>
 
       <figure class="hero">
-        <img src="assets/storefront-main.jpg" alt="Main storefront of Parkside Farmers Market on Taraval Street" />
-        <figcaption>Main storefront on Taraval Street.</figcaption>
+        <div class="hero-frame">
+          <img src="assets/storefront-main.jpg" alt="Main storefront of Parkside Farmers Market on Taraval Street" />
+        </div>
+        <figcaption>The main storefront on Taraval Street, Sunset District.</figcaption>
       </figure>
 
-      <section class="info-columns" aria-labelledby="store-overview">
-        <article>
+      <section class="overview-grid" aria-labelledby="store-overview">
+        <article class="card card-overview">
           <h2 id="store-overview">Store Overview</h2>
           <p>
             Parkside Farmers Market is a compact neighborhood grocery with a strong produce counter and a practical mix of everyday grocery items.
           </p>
           <p>
-            Based on local listing photos, the store carries fresh fruit and vegetables, herbs, pita, spice packets, and specialty dairy and cheese selections.
+            The store carries fresh fruit and vegetables, herbs, pita, spice packets, and specialty dairy and cheese selections with a distinct Middle Eastern pantry section.
           </p>
         </article>
-        <article>
+        <article class="card card-facts">
           <h2>Store Facts</h2>
           <dl class="facts">
             <dt>Address</dt>
-            <dd>555 Taraval St, San Francisco, CA 94116</dd>
+            <dd>555 Taraval St, SF 94116</dd>
             <dt>Phone</dt>
             <dd>(415) 681-5563</dd>
             <dt>Category</dt>
-            <dd>Neighborhood produce market and grocery</dd>
-            <dt>Note</dt>
-            <dd>Hours can change, call store directly to confirm.</dd>
+            <dd>Neighborhood produce market</dd>
+            <dt>Tip</dt>
+            <dd>Call ahead to confirm hours.</dd>
           </dl>
         </article>
       </section>
 
-      <section class="departments" aria-labelledby="what-youll-find">
+      <section class="find-section" aria-labelledby="what-youll-find">
         <h2 id="what-youll-find">What You'll Find</h2>
-        <ul>
-          <li>Front produce racks with seasonal fruit and vegetables</li>
-          <li>Fresh herbs and common cooking greens</li>
-          <li>Middle Eastern pantry items and spice blends</li>
-          <li>Pita and regional packaged staples</li>
-          <li>Specialty dairy and cheese case items</li>
-        </ul>
+        <div class="find-grid">
+          <div class="find-card">
+            <div class="find-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 6c-8 0-16 8-16 20s8 16 16 16 16-4 16-16S32 6 24 6z" fill="var(--terracotta)" opacity="0.2"/><circle cx="24" cy="26" r="10" fill="none" stroke="var(--terracotta)" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Seasonal Produce</h3>
+            <p>Front racks with fresh fruit, vegetables, and cooking greens.</p>
+          </div>
+          <div class="find-card">
+            <div class="find-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 4 C18 12 10 18 10 28 C10 36 16 42 24 42 C32 42 38 36 38 28 C38 18 30 12 24 4z" fill="var(--green-mid)" opacity="0.2"/><path d="M24 40 V18 M20 24 L24 18 M28 28 L24 22" stroke="var(--green-deep)" stroke-width="1.2" fill="none"/></svg>
+            </div>
+            <h3>Fresh Herbs</h3>
+            <p>Common cooking herbs and fresh greens available daily.</p>
+          </div>
+          <div class="find-card">
+            <div class="find-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="22" rx="3" fill="var(--amber)" opacity="0.2"/><line x1="10" y1="24" x2="38" y2="24" stroke="var(--amber-deep)" stroke-width="1.2"/><circle cx="24" cy="19" r="2" fill="var(--amber-deep)" opacity="0.4"/></svg>
+            </div>
+            <h3>Middle Eastern Pantry</h3>
+            <p>Spice blends, pita, and regional packaged staples.</p>
+          </div>
+          <div class="find-card">
+            <div class="find-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="14" ry="10" fill="var(--cream-accent)" stroke="var(--amber-deep)" stroke-width="1.2"/><path d="M14 22 Q24 12 34 22" fill="none" stroke="var(--amber-deep)" stroke-width="1.2"/></svg>
+            </div>
+            <h3>Dairy & Cheese</h3>
+            <p>Specialty dairy and cheese case selections.</p>
+          </div>
+        </div>
       </section>
 
       <section class="photo-band" aria-label="Store and produce reference photos">
-        <h2>Photo Reference</h2>
+        <h2>From the Market</h2>
         <div class="photo-grid">
-          <figure>
+          <figure class="photo-card">
             <img src="assets/storefront-main.jpg" alt="Front entry and produce stand at Parkside Farmers Market" />
-            <figcaption>Front awning and entry.</figcaption>
+            <figcaption>Front awning and entry</figcaption>
           </figure>
-          <figure>
+          <figure class="photo-card">
             <img src="assets/storefront-street.jpg" alt="Street view of Parkside Farmers Market building on Taraval Street" />
-            <figcaption>Wider street-angle exterior.</figcaption>
+            <figcaption>Street-angle exterior</figcaption>
           </figure>
-          <figure>
+          <figure class="photo-card">
             <img src="assets/produce-aisle.jpg" alt="Fruit and produce section inside Parkside Farmers Market" />
-            <figcaption>Interior produce section.</figcaption>
+            <figcaption>Interior produce section</figcaption>
           </figure>
-          <figure>
+          <figure class="photo-card">
             <img src="assets/cheese-case.jpg" alt="Cheese and specialty dairy case at Parkside Farmers Market" />
-            <figcaption>Cheese and dairy case.</figcaption>
+            <figcaption>Cheese and dairy case</figcaption>
           </figure>
-          <figure>
+          <figure class="photo-card">
             <img src="assets/spices-and-pita.jpg" alt="Middle Eastern spices and pita from Parkside Farmers Market" />
-            <figcaption>Pita and spice shelf items.</figcaption>
+            <figcaption>Pita and spice shelf</figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="links" aria-labelledby="directions-and-links">
-        <h2 id="directions-and-links">Directions And Links</h2>
-        <ul>
-          <li>
-            <a href="https://maps.apple.com/?q=Parkside+Farmers+Market+555+Taraval+St+San+Francisco" target="_blank" rel="noopener noreferrer">Open in Apple Maps</a>
-          </li>
-          <li>
-            <a href="../../index.html" target="_self">Back to site index</a>
-          </li>
-        </ul>
+      <section class="links-section" aria-labelledby="directions-and-links">
+        <h2 id="directions-and-links">Visit Us</h2>
+        <div class="link-cards">
+          <a href="https://maps.apple.com/?q=Parkside+Farmers+Market+555+Taraval+St+San+Francisco" target="_blank" rel="noopener noreferrer" class="link-card">
+            <svg viewBox="0 0 24 24" class="link-icon" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+            <span>Open in Apple Maps</span>
+          </a>
+          <a href="../../index.html" target="_self" class="link-card">
+            <svg viewBox="0 0 24 24" class="link-icon" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>
+            <span>Back to site index</span>
+          </a>
+        </div>
       </section>
 
       <footer>
         <p>
-          Photos sourced from Parkside Farmers Market listing pages on
+          Photos sourced from listings on
           <a href="https://www.yelp.com/biz/parkside-farmers-market-san-francisco" target="_blank" rel="noopener noreferrer">Yelp</a>,
           <a href="https://www.mapquest.com/us/california/parkside-farmers-market-11784413" target="_blank" rel="noopener noreferrer">MapQuest</a>,
           and
